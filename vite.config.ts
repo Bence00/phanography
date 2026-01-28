@@ -3,6 +3,10 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  // Drop console/debugger in production
+  esbuild: {
+    drop: ['console', 'debugger'],
+  },
   build: {
     // Optimize chunk size
     chunkSizeWarningLimit: 500,
@@ -25,11 +29,8 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash][extname]',
       },
     },
-    // Minification options (using esbuild - faster and built-in)
+    // Use esbuild for minification (built-in, no extra dependency)
     minify: 'esbuild',
-    esbuild: {
-      drop: ['console', 'debugger'],
-    },
     // Tree shaking
     treeShaking: true,
   },
