@@ -25,13 +25,10 @@ export default defineConfig({
         assetFileNames: 'assets/[name]-[hash][extname]',
       },
     },
-    // Minification options
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true,
-      },
+    // Minification options (using esbuild - faster and built-in)
+    minify: 'esbuild',
+    esbuild: {
+      drop: ['console', 'debugger'],
     },
     // Tree shaking
     treeShaking: true,
