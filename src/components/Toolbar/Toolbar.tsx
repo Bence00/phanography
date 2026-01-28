@@ -23,7 +23,7 @@ export const Toolbar = memo(function Toolbar() {
           >
             P
           </div>
-          <span className="font-semibold hidden sm:block">Phanography</span>
+          <span className="font-semibold hidden sm:block">Panography</span>
         </div>
 
         <div className="w-px h-6" style={{ background: 'var(--border)' }} />

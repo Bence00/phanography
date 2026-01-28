@@ -10,7 +10,7 @@ export const ExportButton = memo(function ExportButton() {
       if (!canvas) return;
 
       const link = document.createElement('a');
-      link.download = `phanography-${Date.now()}.png`;
+      link.download = `panography-${Date.now()}.png`;
       link.href = canvas.toDataURL('image/png');
       link.click();
     } finally {
